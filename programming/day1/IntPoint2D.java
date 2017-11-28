@@ -1,4 +1,5 @@
 import java.lang.Math;
+import java.lang.Object;
 
 public class IntPoint2D implements IIntPoint2D {
 
@@ -6,21 +7,21 @@ public class IntPoint2D implements IIntPoint2D {
   int y;
 
   public IntPoint2D(int a, int b) {
-    this.x = a;
-    this.y = b;
+    x = a;
+    y = b;
   }
 
   /**
    * @returns the X coordinate
    */
   public int getX() {
-    return this.x;
+    return x;
   }
   /**
    * @returns the Y coordinate
    */
   public int getY() {
-    return this.y;
+    return y;
   }
 
   /**
@@ -30,7 +31,8 @@ public class IntPoint2D implements IIntPoint2D {
    * @returns the manhattan distance
    */
   public int manhattanDistance(IIntPoint2D o) {
-    return Math.abs(this.x - o.getX()) + Math.abs(this.y - o.getY());
+    double man_dist = Math.abs(x - o.getX()) + Math.abs(y - o.getY());
+    return (int) man_dist;
   }
   /**
    * Computes the euclidean distance to another point.
@@ -39,7 +41,10 @@ public class IntPoint2D implements IIntPoint2D {
    * @returns the euclidean distance
    */
   public double distance(IIntPoint2D o) {
-    return Math.sqrt(this.x - o.getX())^2 + Math.sqrt(this.y - o.getY())^2;
+    double _x = Math.pow((getX() - o.getX()), 2);
+    double _y = Math.pow((getY() - o.getY()), 2);
+    double eucl_dist = Math.sqrt(_x + _y);
+    return eucl_dist;
   }
 
   // The following methods make JAVA objects better behaved
@@ -55,7 +60,7 @@ public class IntPoint2D implements IIntPoint2D {
    * @returns true if this point is the same as point o
    */
   public boolean equals(Object o) {
-    if (this.x == o.getX() && this.y == o.getY()) {
+    if (toString().equals(o.toString())) {
       return true;
     }
     else {
@@ -67,5 +72,7 @@ public class IntPoint2D implements IIntPoint2D {
    * formula: (x<<16)+y
    * @returns the hashcode for the point
    */
-  public int hashcode();
+  public int hashcode() {
+    return (getX() << 16) +getY();
+  }
 }
