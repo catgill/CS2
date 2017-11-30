@@ -1,0 +1,5 @@
+In this problem the space taken by the two dimensional array "squares" could
+potentially go to infinity if you were to demand a board that big. With each
+increase in size of the rows or columns of the board the memory used and run
+time both increase at the same speed, since with each point added a certain
+amount of processing time is also added, meaning that this function is linear
