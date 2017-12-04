@@ -1,11 +1,12 @@
-/**
- * Implments a Ring Queue
- */
+
+
+//12/4/2017
+//Copied code from queue file from the announcements page on canvas
 public class RingQueue<T> implements IQueue<T> {
 
     int front;
     int back;
-    int size; // maximum size
+    int size;
     T[] backingArray;
 
 

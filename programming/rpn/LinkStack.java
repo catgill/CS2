@@ -1,5 +1,8 @@
 
 
+//12/4/2017
+//Copied code from class
+
 public class LinkStack<T> implements IStack<T> {
   Cell<T> top;
   double size; //is the current size of the stack
