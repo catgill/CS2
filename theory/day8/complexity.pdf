@@ -1,0 +1,42 @@
+  1a. Queues can be added to from one end and removed from the other. They follow the first in first out rule.
+  You can add as many values as you'd like and the back of the queue will continue to move with the last value.
+
+  1b. Stacks can only be added to and removed from at one end. They follow the first in last out rule. You can
+  "push" values onto the stack and "pop" them off.
+
+  2. If you don't know the size of the list before implementation then you should use a list backed by links
+  rather than arrays, since arrays require a set length. Arrays however can take up less space since they don't
+  have to store an extra pointer per list node. Arrays also access random positions at a constant speed 0(1)
+  while linked lists  can only access at a linear speed 0(n).
+
+  3a. 0(1) Constant time, because no items have to be shifted, the value just has to be added to the end of the
+  list one time.
+  3b. 0(n/2) or 0(n) Linear time, because all the elements in front of the value being removed would have
+  to shift forward.
+  3c. 0(1) Constant time, because the head value of the list is always 0, so given any index, the value the
+  value can be accessed quickly and directly.
+
+  4a. 0(1) Constant time, because we constantly have the tail pointer values and can easily update them.
+  4b. 0(1) Constant time, since we know the next and previous nodes for each value, they are easy to update after
+  a single value is removed.
+  4c. 0(n) Linear time, because the fetch method still has to run through each value to find the one it is
+  searching for.
+
+  5a. 0(n) Linear, because the method has to run through possibly the entire list and check each value to see if
+  it equals the given one. As the number of items in the list increases so does the search time.
+
+  5b. The time complexity for linked lists is the same because the method has to search through each value in a
+  similar way to the array list.
+  5c. If the search value happens to be the root of the tree, the first value is returned meaning the lower bound
+  is 0(1) or constant time. The upper bound would be if the tree was totally unbalanced and only went one way,
+  meaning that it looked more like a linked list than a tree. In this case the time complexity would be 0(n)
+  linear time. The average time complexity would be 0(log n) logarithmic.
+
+  5d. Yes, because that means that the tree could not resemble a linked list, which means that the upper bound
+  would be logarithmic 0(log n).
+
+  6. Yes, because while a list would return at an average linear speed, a binary search tree would be able to
+  search and retrieve values at logarithmic speed on average. Since binary trees or sorted by number value
+  (smaller on the left, greater on the right) on average a binary tree will cut the search speed of a value in
+  half, because each time the tree moves to a new level in its search, it eliminates half of the possible
+  remaining values.
