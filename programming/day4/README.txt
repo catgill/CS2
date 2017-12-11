@@ -5,6 +5,9 @@ You should implement a singlely linked list with name SingleLinkList
 You should implement a doublely linked list with name DoubleLinkList
 
 Files:
+ArrayList.java -
+SingleLinkList.java - Single linked list based off of doubly linked list; prev and remove functions don't work.
+DoubleLinkList.java  - Your doubly linked list
 IList.java  - An interface for lists based on the list operations from the 11/29 lecture
 ISLink.java - An interface that your link cells for SingleLinkList must implement
 IDLink.java - An interface that your link cells for DoubleLinkList must implement
