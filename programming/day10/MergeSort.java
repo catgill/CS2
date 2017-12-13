@@ -20,14 +20,21 @@ public class MergeSort<T extends Comparable> implements ISort <T> {
   private void mergeSorting(int min, int max) {
     if (min < max) {
       int mid = min + ((max - min) / 2);
-      mergeSorting(min, mid);
-      mergeSorting(mid + 1, max);
-      merge(min, mid, max);
+      if (new_array.length == 1) {
+        merge(min, mid, max);
+      }
+      else {
+        mergeSorting(min, mid);
+        mergeSorting(mid + 1, max);
+      }
+
+      //merge(min, mid, max);
     }
   }
 
   private void merge(int mini, int midi, int maxi) {
     for (int i = mini; i <= maxi; i++) {
+      System.out.println(new_array[i]);
       ret_array[i] = new_array[i];
     }
     int miner = mini;
